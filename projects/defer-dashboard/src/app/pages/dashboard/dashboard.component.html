@@ -1,0 +1,30 @@
+<h1>Dashboard</h1>
+<!-- Chart loads when visibl -->
+@defer (on viewport) {
+  <app-chart></app-chart>
+} @placeholder {
+  <p>Lading Chart...</p>
+}
+
+<!-- Analytics loads when browser is idle -->
+@defer (on idle) {
+  <app-analytics></app-analytics>
+} @placeholder {
+  <p>Preparing Analytics...</p>
+}
+
+<!-- Reports loads on button click -->
+<button #btn>Load Reports</button>
+
+@defer (on interaction(btn)) {
+  <app-reports></app-reports>
+} @placeholder {
+  <p>Click to load reports</p>
+}
+
+<!-- Timer -->
+@defer (on timer(3000)) {
+  <app-offers></app-offers>
+} @placeholder {
+  <p>Loading after 3 sec...</p>
+}
