@@ -1,0 +1,10 @@
+<h2>RxJS + OnPush</h2>
+
+<p>Count: {{ count$ | async }}</p>
+
+<button (click)="increment()">Increment</button>
+<button (click)="reset()">Reset</button>
+
+<ul>
+  <li *ngFor="let action of actions$ | async">{{ action }}</li>
+</ul>

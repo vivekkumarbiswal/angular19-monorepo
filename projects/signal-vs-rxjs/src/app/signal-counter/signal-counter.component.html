@@ -1,0 +1,10 @@
+<h2>Signals</h2>
+
+<p>Count: {{ count() }}</p>
+
+<button (click)="increment()">Increment</button>
+<button (click)="reset()">Reset</button>
+
+<ul>
+  <li *ngFor="let action of actions()">{{ action }}</li>
+</ul>
