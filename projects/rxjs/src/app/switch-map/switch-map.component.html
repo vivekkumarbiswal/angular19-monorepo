@@ -1,0 +1,9 @@
+<input
+  type="text"
+  placeholder="Search users..."
+  [formControl]="searchControl"
+/>
+
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
