@@ -28,8 +28,10 @@ export class SwitchMapComponent implements OnInit {
 
     const allUsers = ['John', 'Jane', 'Jack', 'Jill', 'james'];
 
-    const filtered = allUsers.filter((user) =>
-      user.toLowerCase().includes(query.toLocaleLowerCase()),
+    const filtered = allUsers.filter(
+      (user) =>
+        // user.toLowerCase().includes(query.toLocaleLowerCase()),
+        user.toLowerCase().includes(query), // "vivek".includes("vi") → true
     );
     return of(filtered);
   }
