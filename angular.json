@@ -20,9 +20,7 @@
             "outputPath": "dist/change-detection",
             "index": "projects/change-detection/src/index.html",
             "browser": "projects/change-detection/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/change-detection/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -31,9 +29,7 @@
                 "input": "projects/change-detection/public"
               }
             ],
-            "styles": [
-              "projects/change-detection/src/styles.scss"
-            ],
+            "styles": ["projects/change-detection/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -78,10 +74,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/change-detection/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -90,9 +83,7 @@
                 "input": "projects/change-detection/public"
               }
             ],
-            "styles": [
-              "projects/change-detection/src/styles.scss"
-            ],
+            "styles": ["projects/change-detection/src/styles.scss"],
             "scripts": []
           }
         }
@@ -115,9 +106,7 @@
             "outputPath": "dist/ngzone",
             "index": "projects/ngzone/src/index.html",
             "browser": "projects/ngzone/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/ngzone/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -126,9 +115,7 @@
                 "input": "projects/ngzone/public"
               }
             ],
-            "styles": [
-              "projects/ngzone/src/styles.scss"
-            ],
+            "styles": ["projects/ngzone/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -173,10 +160,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/ngzone/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -185,9 +169,7 @@
                 "input": "projects/ngzone/public"
               }
             ],
-            "styles": [
-              "projects/ngzone/src/styles.scss"
-            ],
+            "styles": ["projects/ngzone/src/styles.scss"],
             "scripts": []
           }
         }
@@ -210,9 +192,7 @@
             "outputPath": "dist/ngzone-idle-demo",
             "index": "projects/ngzone-idle-demo/src/index.html",
             "browser": "projects/ngzone-idle-demo/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/ngzone-idle-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -221,9 +201,7 @@
                 "input": "projects/ngzone-idle-demo/public"
               }
             ],
-            "styles": [
-              "projects/ngzone-idle-demo/src/styles.scss"
-            ],
+            "styles": ["projects/ngzone-idle-demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -268,10 +246,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/ngzone-idle-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -280,9 +255,7 @@
                 "input": "projects/ngzone-idle-demo/public"
               }
             ],
-            "styles": [
-              "projects/ngzone-idle-demo/src/styles.scss"
-            ],
+            "styles": ["projects/ngzone-idle-demo/src/styles.scss"],
             "scripts": []
           }
         }
@@ -301,9 +274,7 @@
             "outputPath": "dist/defer-dashboard",
             "index": "projects/defer-dashboard/src/index.html",
             "browser": "projects/defer-dashboard/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/defer-dashboard/tsconfig.app.json",
             "assets": [
               {
@@ -311,9 +282,7 @@
                 "input": "projects/defer-dashboard/public"
               }
             ],
-            "styles": [
-              "projects/defer-dashboard/src/styles.css"
-            ],
+            "styles": ["projects/defer-dashboard/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -358,10 +327,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/defer-dashboard/tsconfig.spec.json",
             "assets": [
               {
@@ -369,9 +335,7 @@
                 "input": "projects/defer-dashboard/public"
               }
             ],
-            "styles": [
-              "projects/defer-dashboard/src/styles.css"
-            ],
+            "styles": ["projects/defer-dashboard/src/styles.css"],
             "scripts": []
           }
         }
@@ -390,9 +354,7 @@
             "outputPath": "dist/signal",
             "index": "projects/signal/src/index.html",
             "browser": "projects/signal/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/signal/tsconfig.app.json",
             "assets": [
               {
@@ -400,9 +362,7 @@
                 "input": "projects/signal/public"
               }
             ],
-            "styles": [
-              "projects/signal/src/styles.css"
-            ],
+            "styles": ["projects/signal/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -447,10 +407,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/signal/tsconfig.spec.json",
             "assets": [
               {
@@ -458,9 +415,7 @@
                 "input": "projects/signal/public"
               }
             ],
-            "styles": [
-              "projects/signal/src/styles.css"
-            ],
+            "styles": ["projects/signal/src/styles.css"],
             "scripts": []
           }
         }
@@ -479,9 +434,7 @@
             "outputPath": "dist/signal-vs-rxjs",
             "index": "projects/signal-vs-rxjs/src/index.html",
             "browser": "projects/signal-vs-rxjs/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/signal-vs-rxjs/tsconfig.app.json",
             "assets": [
               {
@@ -489,9 +442,7 @@
                 "input": "projects/signal-vs-rxjs/public"
               }
             ],
-            "styles": [
-              "projects/signal-vs-rxjs/src/styles.css"
-            ],
+            "styles": ["projects/signal-vs-rxjs/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -536,10 +487,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/signal-vs-rxjs/tsconfig.spec.json",
             "assets": [
               {
@@ -547,9 +495,7 @@
                 "input": "projects/signal-vs-rxjs/public"
               }
             ],
-            "styles": [
-              "projects/signal-vs-rxjs/src/styles.css"
-            ],
+            "styles": ["projects/signal-vs-rxjs/src/styles.css"],
             "scripts": []
           }
         }
@@ -568,9 +514,7 @@
             "outputPath": "dist/ngrx-task-manager",
             "index": "projects/ngrx-task-manager/src/index.html",
             "browser": "projects/ngrx-task-manager/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/ngrx-task-manager/tsconfig.app.json",
             "assets": [
               {
@@ -578,9 +522,7 @@
                 "input": "projects/ngrx-task-manager/public"
               }
             ],
-            "styles": [
-              "projects/ngrx-task-manager/src/styles.css"
-            ],
+            "styles": ["projects/ngrx-task-manager/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -625,10 +567,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/ngrx-task-manager/tsconfig.spec.json",
             "assets": [
               {
@@ -636,9 +575,7 @@
                 "input": "projects/ngrx-task-manager/public"
               }
             ],
-            "styles": [
-              "projects/ngrx-task-manager/src/styles.css"
-            ],
+            "styles": ["projects/ngrx-task-manager/src/styles.css"],
             "scripts": []
           }
         }
@@ -657,9 +594,7 @@
             "outputPath": "dist/reusable-task-manager",
             "index": "projects/reusable-task-manager/src/index.html",
             "browser": "projects/reusable-task-manager/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/reusable-task-manager/tsconfig.app.json",
             "assets": [
               {
@@ -667,9 +602,7 @@
                 "input": "projects/reusable-task-manager/public"
               }
             ],
-            "styles": [
-              "projects/reusable-task-manager/src/styles.css"
-            ],
+            "styles": ["projects/reusable-task-manager/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -714,10 +647,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/reusable-task-manager/tsconfig.spec.json",
             "assets": [
               {
@@ -725,9 +655,7 @@
                 "input": "projects/reusable-task-manager/public"
               }
             ],
-            "styles": [
-              "projects/reusable-task-manager/src/styles.css"
-            ],
+            "styles": ["projects/reusable-task-manager/src/styles.css"],
             "scripts": []
           }
         }
@@ -746,9 +674,7 @@
             "outputPath": "dist/rxjs",
             "index": "projects/rxjs/src/index.html",
             "browser": "projects/rxjs/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/rxjs/tsconfig.app.json",
             "assets": [
               {
@@ -756,9 +682,7 @@
                 "input": "projects/rxjs/public"
               }
             ],
-            "styles": [
-              "projects/rxjs/src/styles.css"
-            ],
+            "styles": ["projects/rxjs/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -803,10 +727,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/rxjs/tsconfig.spec.json",
             "assets": [
               {
@@ -814,9 +735,90 @@
                 "input": "projects/rxjs/public"
               }
             ],
-            "styles": [
-              "projects/rxjs/src/styles.css"
+            "styles": ["projects/rxjs/src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "cors-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/cors-demo",
+      "sourceRoot": "projects/cors-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/cors-demo",
+            "index": "projects/cors-demo/src/index.html",
+            "browser": "projects/cors-demo/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/cors-demo/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/cors-demo/public"
+              }
             ],
+            "styles": ["projects/cors-demo/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "cors-demo:build:production"
+            },
+            "development": {
+              "buildTarget": "cors-demo:build:development"
+            }
+          },
+          "options": {
+            "proxyConfig": "proxy.config.json"
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/cors-demo/tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/cors-demo/public"
+              }
+            ],
+            "styles": ["projects/cors-demo/src/styles.css"],
             "scripts": []
           }
         }
@@ -824,8 +826,6 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@ngrx/schematics"
-    ]
+    "schematicCollections": ["@ngrx/schematics"]
   }
 }
