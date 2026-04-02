@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SignalComponent } from './component/signal/signal.component';
 
 @Component({
@@ -8,5 +8,15 @@ import { SignalComponent } from './component/signal/signal.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'signal';
+  normal = 0;
+  sig = signal(0);
+
+  constructor() {
+    setInterval(() => {
+      console.log('updating both');
+
+      this.normal++; // ❌ UI will NOT update consistently
+      this.sig.set(this.sig() + 1); // ✅ UI WILL update
+    }, 2000);
+  }
 }

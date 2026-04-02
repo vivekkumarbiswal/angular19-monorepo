@@ -1,19 +1,40 @@
 import { NgFor } from '@angular/common';
-import { Component, computed, effect, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-signal',
   imports: [NgFor],
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignalComponent {
   actions = signal<string[]>([]);
   counter = signal(0);
   doubleCounter = computed(() => this.counter() * 2);
 
+  firstName = signal('Vivek');
+  middleName = signal<string>('Kumar');
+  lastName = signal<string>('Biswal');
+
+  changeName = 'Angular';
+
   constructor() {
     effect(() => console.log(this.counter()));
+
+    const value = this.firstName();
+
+    setTimeout(() => {
+      debugger;
+      this.changeName = 'React';
+      this.firstName.set('Rahul');
+    }, 5000);
   }
 
   increment() {

@@ -12,3 +12,9 @@
 <ol id="log">
   <li *ngFor="let action of actions()">{{ action }}</li>
 </ol>
+
+<hr />
+
+<p>{{ firstName() }} {{ middleName() }} {{ lastName() }}</p>
+<input type="text" [value]="firstName()" />
+<p>{{ changeName }}</p>
