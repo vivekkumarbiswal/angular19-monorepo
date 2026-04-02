@@ -1,4 +1,7 @@
 <app-signal></app-signal>
 
-<h2>Normal: {{ normal }}</h2>
-<h2>Signal: {{ sig() }}</h2>
+<h2>{{ getNormalName() }}</h2>
+<h2>{{ getFirstName() }}</h2>
+
+<button (click)="changeNormal()">Change Normal</button>
+<button (click)="changeSignal()">Change Signal</button>

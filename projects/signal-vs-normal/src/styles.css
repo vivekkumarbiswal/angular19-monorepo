@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #0d0f1a;
+  --bg-secondary: #12152a;
+  --bg-card: #1a1f35;
+  --bg-card-hover: #1e2440;
+  --border: #2a3155;
+  --border-light: #3a4170;
+
+  --signal-color: #a78bfa;
+  --signal-glow: rgba(167, 139, 250, 0.3);
+  --signal-dark: #7c3aed;
+
+  --normal-color: #f87171;
+  --normal-glow: rgba(248, 113, 113, 0.3);
+  --normal-dark: #dc2626;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --info: #60a5fa;
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+code, .mono {
+  font-family: 'JetBrains Mono', monospace;
+}

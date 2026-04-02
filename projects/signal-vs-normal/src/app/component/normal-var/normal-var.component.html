@@ -1,0 +1,82 @@
+<div class="panel panel-normal">
+
+  <!-- Panel Header -->
+  <div class="panel-header">
+    <div class="panel-badge badge-normal">❌ Normal Variable</div>
+    <div class="panel-tag">OnPush</div>
+  </div>
+  <p class="panel-caption">
+    Plain class properties are <strong>invisible to Angular's change detector</strong> in OnPush mode.
+  </p>
+
+  <!-- Code Snippet -->
+  <div class="code-block">
+    <span class="code-label">component.ts</span>
+    <pre><code><span class="kw">counter</span> = <span class="num">0</span>;  <span class="cm">// ← just a number</span>
+<span class="kw">name</span> = <span class="str">'Vivek'</span>;
+
+increment() &#123;
+  <span class="cm">// Angular has NO idea this changed 👇</span>
+  <span class="kw">this</span>.counter<span class="op">++</span>;
+&#125;</code></pre>
+  </div>
+
+  <!-- Live Values -->
+  <div class="value-grid">
+    <div class="value-box">
+      <div class="value-label">counter (in JS memory)</div>
+      <div class="value-actual">{{ counter }}</div>
+      <div class="value-note">Real value — hidden from OnPush</div>
+    </div>
+    <div class="value-box">
+      <div class="value-label">name (in JS memory)</div>
+      <div class="value-actual name-val">{{ name }}</div>
+      <div class="value-note">Real value — hidden from OnPush</div>
+    </div>
+  </div>
+
+  <!-- Warning Banner -->
+  <div class="stale-banner">
+    ⚠️ The values above only update when a button click event causes Angular to re-check this component.
+    They are <strong>NOT reactive</strong>.
+  </div>
+
+  <!-- Buttons -->
+  <div class="btn-group">
+    <button class="btn btn-action" (click)="increment()">＋ Increment</button>
+    <button class="btn btn-action" (click)="decrement()">－ Decrement</button>
+    <button class="btn btn-name" (click)="changeName()">✏️ Change Name</button>
+  </div>
+  <button class="btn btn-force" (click)="forceRender()">
+    🔄 Force Re-render (flush stale values)
+  </button>
+
+  <!-- Render Counter -->
+  <div class="render-badge">
+    <span class="render-dot dot-normal"></span>
+    Re-renders triggered: <strong>{{ renderCount }}</strong>
+    <span class="render-hint">(only on button events)</span>
+  </div>
+
+  <!-- Log -->
+  <div class="log-header">
+    <span>Action Log</span>
+    <button class="btn-clear" (click)="clearLog()">Clear</button>
+  </div>
+  <div class="log-list">
+    @for (entry of log; track entry.id) {
+      <div
+        class="log-entry"
+        [class.log-action]="entry.type === 'action'"
+        [class.log-render]="entry.type === 'render'"
+      >
+        <span class="log-icon">{{ entry.type === 'action' ? '⚡' : '🔄' }}</span>
+        <span class="log-msg">{{ entry.message }}</span>
+      </div>
+    }
+    @if (log.length === 0) {
+      <div class="log-empty">No actions yet — click a button!</div>
+    }
+  </div>
+
+</div>

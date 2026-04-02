@@ -1,0 +1,43 @@
+<!-- ===== HEADER ===== -->
+<header class="hero">
+  <div class="hero-badge">Angular 19 · OnPush Change Detection</div>
+  <h1 class="hero-title">
+    <span class="signal-text">Signal</span>
+    <span class="vs-text">vs</span>
+    <span class="normal-text">Normal Variable</span>
+  </h1>
+  <p class="hero-subtitle">
+    See exactly why changing a normal variable does <strong>nothing</strong> in OnPush,
+    while a Signal always keeps the UI in sync.
+  </p>
+</header>
+
+<!-- ===== CONCEPT EXPLAINER ===== -->
+<section class="concept-bar">
+  <div class="concept-card concept-normal">
+    <div class="concept-icon">🚫</div>
+    <div>
+      <div class="concept-label">Normal Variable + OnPush</div>
+      <div class="concept-desc">Angular skips re-rendering unless an <code>&#64;Input</code> changes, an event fires, or an async pipe emits.</div>
+    </div>
+  </div>
+  <div class="concept-divider">→</div>
+  <div class="concept-card concept-signal">
+    <div class="concept-icon">✅</div>
+    <div>
+      <div class="concept-label">Signal + OnPush</div>
+      <div class="concept-desc">Angular tracks every signal read. Any <code>.set()</code> or <code>.update()</code> automatically schedules a precise re-render.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SIDE-BY-SIDE PANELS ===== -->
+<main class="panels">
+  <app-normal-var />
+  <app-signal-demo />
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>Built with ❤️ to learn Angular Signals · <code>ChangeDetectionStrategy.OnPush</code></p>
+</footer>

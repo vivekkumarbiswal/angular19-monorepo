@@ -1,0 +1,99 @@
+<div class="panel panel-signal">
+
+  <!-- Panel Header -->
+  <div class="panel-header">
+    <div class="panel-badge badge-signal">✅ Signal</div>
+    <div class="panel-tag">OnPush</div>
+  </div>
+  <p class="panel-caption">
+    Signals are <strong>reactive by design</strong>. Angular tracks every read and schedules
+    a precise re-render on every <code>.set()</code> or <code>.update()</code>.
+  </p>
+
+  <!-- Code Snippet -->
+  <div class="code-block">
+    <span class="code-label">component.ts</span>
+    <pre><code><span class="kw">counter</span> = <span class="fn">signal</span>(<span class="num">0</span>);  <span class="cm">// ← reactive!</span>
+<span class="kw">name</span> = <span class="fn">signal</span>(<span class="str">'Vivek'</span>);
+<span class="kw">doubled</span> = <span class="fn">computed</span>(() => <span class="kw">this</span>.counter() * <span class="num">2</span>);
+
+increment() &#123;
+  <span class="cm">// Angular KNOWS about this change 👇</span>
+  <span class="kw">this</span>.counter.<span class="fn">update</span>(v => v + <span class="num">1</span>);
+&#125;</code></pre>
+  </div>
+
+  <!-- Live Values -->
+  <div class="value-grid">
+    <div class="value-box value-box-signal">
+      <div class="value-label">counter() <span class="signal-tag">signal</span></div>
+      <div class="value-actual counter-val">{{ counter() }}</div>
+      <div class="value-note">Always in sync with the UI ✨</div>
+    </div>
+    <div class="value-box value-box-signal">
+      <div class="value-label">name() <span class="signal-tag">signal</span></div>
+      <div class="value-actual name-val">{{ name() }}</div>
+      <div class="value-note">Always in sync with the UI ✨</div>
+    </div>
+  </div>
+
+  <!-- Computed Values -->
+  <div class="computed-section">
+    <div class="computed-label">🧮 computed() values (auto-derived)</div>
+    <div class="computed-grid">
+      <div class="computed-box">
+        <div class="computed-key">doubleCounter()</div>
+        <div class="computed-value">{{ doubleCounter() }}</div>
+      </div>
+      <div class="computed-box">
+        <div class="computed-key">counterStatus()</div>
+        <div class="computed-value status-val">{{ counterStatus() }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="btn-group">
+    <button class="btn btn-action" (click)="increment()">＋ Increment</button>
+    <button class="btn btn-action" (click)="decrement()">－ Decrement</button>
+    <button class="btn btn-name" (click)="changeName()">✏️ Change Name</button>
+  </div>
+  <button class="btn btn-reset" (click)="resetCounter()">
+    ↺ Reset Counter
+  </button>
+
+  <!-- Render Counter -->
+  <div class="render-badge">
+    <span class="render-dot dot-signal"></span>
+    Re-renders triggered: <strong>{{ renderCount() }}</strong>
+    <span class="render-hint">(every signal change)</span>
+  </div>
+
+  <!-- Log -->
+  <div class="log-header">
+    <span>Action + Effect Log</span>
+    <button class="btn-clear" (click)="clearLog()">Clear</button>
+  </div>
+  <div class="log-list">
+    @for (entry of log(); track entry.id) {
+      <div
+        class="log-entry"
+        [class.log-action]="entry.type === 'action'"
+        [class.log-render]="entry.type === 'render'"
+        [class.log-effect]="entry.type === 'effect'"
+        [class.log-computed]="entry.type === 'computed'"
+      >
+        <span class="log-icon">{{
+          entry.type === 'action' ? '⚡' :
+          entry.type === 'effect' ? '🌀' :
+          entry.type === 'computed' ? '🧮' : '🔄'
+        }}</span>
+        <span class="log-msg">{{ entry.message }}</span>
+      </div>
+    }
+    @if (log().length === 0) {
+      <div class="log-empty">No actions yet — click a button!</div>
+    }
+  </div>
+
+</div>
