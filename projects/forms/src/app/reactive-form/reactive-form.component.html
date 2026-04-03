@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <form #myForm="ngForm">
+  <form [formGroup]="userForm" (ngSubmit)="onUserSave()">
     <div class="row">
       <div class="col-md-6 mb-3">
         <label class="form-label">First name</label>
@@ -8,44 +8,40 @@
           type="text"
           class="form-control"
           placeholder="First name"
-          [(ngModel)]="userObj.firstName"
-          #firstName="ngModel"
-          required
+          formControlName="firstName"
         />
         <small
           class="text-danger"
           *ngIf="
-            firstName.errors?.['required'] &&
-            (firstName.touched || firstName.dirty)
+            userForm.controls['firstName'].errors?.['required'] &&
+            userForm.controls['firstName'].touched
           "
-          >This is required</small
+          >This is Required</small
         >
       </div>
 
       <div class="col-md-6 mb-3">
         <label class="form-label">Last name</label>
         <input
-          name="lastName"
+          name="lastname"
           type="text"
           class="form-control"
           placeholder="Last name"
-          [(ngModel)]="userObj.lastName"
-          #lastName="ngModel"
-          minlength="4"
-          required
+          formControlName="lastName"
         />
-        <div>
-          <small
-            class="text-danger"
-            *ngIf="lastName.errors?.['required'] && lastName.touched"
-            >This is required</small
-          >
-          <small
-            class="text-danger"
-            *ngIf="lastName.errors?.['minlength'] && lastName.touched"
-            >Min 4 character required</small
-          >
-        </div>
+        <small
+          class="text-danger"
+          *ngIf="userForm.controls['lastName'].errors?.['required']"
+          >This is required</small
+        >
+        <small
+          class="text-danger"
+          *ngIf="
+            userForm.controls['lastName'].errors?.['minlength'] &&
+            userForm.controls['lastName'].touched
+          "
+          >Min 5 char needed</small
+        >
       </div>
     </div>
 
@@ -58,7 +54,7 @@
           type="text"
           class="form-control"
           placeholder="Username"
-          [(ngModel)]="userObj.userName"
+          formControlName="userName"
         />
       </div>
     </div>
@@ -70,30 +66,29 @@
         type="text"
         class="form-control"
         placeholder="City"
-        [(ngModel)]="userObj.city"
+        formControlName="city"
       />
     </div>
 
     <div class="row">
       <div class="col-md-6 mb-3">
         <label class="form-label">State</label>
-        <select name="state" class="form-select" [(ngModel)]="userObj.state">
-          <option selected value="">Choose...</option>
-          <option value="Goa">Goa</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="Punjab">Punjab</option>
-          <option value="Karnataka">Karnataka</option>
+        <select name="state" class="form-select" formControlName="state">
+          <option selected>Choose...</option>
+          <option>Goa</option>
+          <option>Maharashtra</option>
+          <option>Punjab</option>
         </select>
       </div>
 
       <div class="col-md-6 mb-3">
         <label class="form-label">Zip</label>
         <input
-          name="zipCode"
+          name="zip"
           type="text"
           class="form-control"
           placeholder="Zip code"
-          [(ngModel)]="userObj.zipCode"
+          formControlName="zip"
         />
       </div>
     </div>
@@ -103,18 +98,27 @@
         name="isTermsAgree"
         class="form-check-input"
         type="checkbox"
-        [(ngModel)]="userObj.isTermsAgree"
+        formControlName="isAgree"
       />
       <label class="form-check-label"> Agree to terms and conditions </label>
     </div>
-
-    <button
-      class="btn btn-primary"
-      type="button"
-      (click)="onSave()"
-      [disabled]="myForm.invalid"
-    >
+    <p>{{ userForm.status }}</p>
+    <p>{{ userForm.valid }}</p>
+    <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">
       Submit form
     </button>
   </form>
 </div>
+
+<hr />
+
+<form [formGroup]="userFormArray">
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i = index">
+      <input [formControlName]="i" />
+      <button type="button" (click)="RemoveSkill(i)">Remoce Skill</button>
+    </div>
+  </div>
+
+  <button (click)="addSkill()">Add Skill</button>
+</form>
