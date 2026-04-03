@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { SignalComponent } from './component/signal/signal.component';
+import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
 
 @Component({
   selector: 'app-root',
-  imports: [SignalComponent],
+  imports: [SignalComponent, LinkedSignalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

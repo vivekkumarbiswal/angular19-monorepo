@@ -31,7 +31,7 @@ export class SignalComponent {
     const value = this.firstName();
 
     setTimeout(() => {
-      debugger;
+      // debugger;
       this.changeName = 'React';
       this.firstName.set('Rahul');
     }, 5000);
