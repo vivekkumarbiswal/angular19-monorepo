@@ -32,40 +32,44 @@
     <div class="row">
       <div class="col-md-6 mb-2">
         <label>Registration No</label>
-        <input type="text" class="form-control" />
+        <input type="text" [(ngModel)]="carObj.regNo" class="form-control" />
       </div>
 
       <div class="col-md-6 mb-2">
         <label>Brand</label>
-        <input type="text" class="form-control" />
+        <input type="text" [(ngModel)]="carObj.brand" class="form-control" />
       </div>
 
       <div class="col-md-6 mb-2">
         <label>Model</label>
-        <input type="text" class="form-control" />
+        <input type="text" [(ngModel)]="carObj.model" class="form-control" />
       </div>
 
       <div class="col-md-6 mb-2">
         <label>Year</label>
-        <input type="number" class="form-control" />
+        <input type="number" [(ngModel)]="carObj.year" class="form-control" />
       </div>
 
       <div class="col-md-6 mb-2">
         <label>Color</label>
-        <input type="text" class="form-control" />
+        <input type="text" [(ngModel)]="carObj.color" class="form-control" />
       </div>
 
       <div class="col-md-6 mb-2">
         <label>Daily Rate</label>
-        <input type="number" class="form-control" />
+        <input
+          type="number"
+          [(ngModel)]="carObj.dailyRate"
+          class="form-control"
+        />
       </div>
 
       <div class="col-md-12 mb-2">
         <label>Car Image URL</label>
-        <input type="text" class="form-control" />
+        <input type="text" [(ngModel)]="carObj.carImage" class="form-control" />
       </div>
     </div>
 
-    <button class="btn btn-primary mt-3">Save Car</button>
+    <button class="btn btn-primary mt-3" (click)="onSaveCar()">Save Car</button>
   </div>
 </div>
