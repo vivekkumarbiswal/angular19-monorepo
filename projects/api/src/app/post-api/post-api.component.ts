@@ -56,7 +56,7 @@ export class PostApiComponent {
       .post<
         ApiResponse<Car[]>
       >('https://freeapi.miniprojectideas.com/api/CarRentalApp/CreateNewCar', this.carObj)
-      .subscribe((res: any) => {
+      .subscribe((res) => {
         if (res.result) {
           alert('Car Created Succesfully');
           this.getAllCars();
@@ -66,8 +66,8 @@ export class PostApiComponent {
       });
   }
 
-  onEdit(data: any) {
-    this.carObj = data;
+  onEdit(data: Car) {
+    this.carObj = { ...data };
   }
 
   updateCar() {
@@ -75,7 +75,7 @@ export class PostApiComponent {
       .put<
         ApiResponse<Car[]>
       >('https://freeapi.miniprojectideas.com/api/CarRentalApp/UpdateCar', this.carObj)
-      .subscribe((res: any) => {
+      .subscribe((res) => {
         if (res.result) {
           alert('Car Updated Succesfully');
           this.getAllCars();
@@ -90,10 +90,9 @@ export class PostApiComponent {
 
     if (isDelete === true) {
       this.http
-        .delete(
-          'https://freeapi.miniprojectideas.com/api/CarRentalApp/DeleteCarbyCarId?carid=' +
-            id,
-        )
+        .delete<
+          ApiResponse<Car[]>
+        >('https://freeapi.miniprojectideas.com/api/CarRentalApp/DeleteCarbyCarId?carid=' + id)
         .subscribe((res: any) => {
           if (res.result) {
             alert('Car Deleted Succesfully');
@@ -103,5 +102,18 @@ export class PostApiComponent {
           }
         });
     }
+  }
+
+  resetForm() {
+    this.carObj = {
+      carId: 0,
+      brand: '',
+      model: '',
+      year: 0,
+      color: '',
+      dailyRate: 0,
+      carImage: '',
+      regNo: '',
+    };
   }
 }
