@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-warning">
+        <h4>Customer List</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr Number</th>
+              <th>Name</th>
+              <th>Mobile</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of customerData; track item.customerId; let i = $index) {
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.customerName }}</td>
+                <td>{{ item.mobileNo }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.customerCity }}</td>
+                <td>
+                  <button class="btn btn-success me-1" (click)="onEdit(item)">
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-danger"
+                    (click)="onDelete(item.customerId)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-warning">
+        <h4>{{ isEditMode ? 'Edit Customer' : 'New Customer Form' }}</h4>
+      </div>
+      <div class="card-body">
+        <div class="mb-2">
+          <label>Name</label>
+          <input
+            type="text"
+            [(ngModel)]="customerObj.customerName"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-2">
+          <label>City</label>
+          <input
+            type="text"
+            [(ngModel)]="customerObj.customerCity"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-2">
+          <label>Mobile Number</label>
+          <input
+            type="text"
+            [(ngModel)]="customerObj.mobileNo"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-2">
+          <label>Email</label>
+          <input
+            type="text"
+            [(ngModel)]="customerObj.email"
+            class="form-control"
+          />
+        </div>
+        <div class="row pt-2">
+          <div class="col-6 text-center">
+            <button class="btn btn-secondary" (click)="resetForm()">Reset</button>
+          </div>
+          <div class="col-6 text-center">
+            @if (!isEditMode) {
+              <button
+                class="btn btn-success"
+                (click)="onSaveCustomer()"
+              >
+                Save Customer
+              </button>
+            }
+            @if (isEditMode) {
+              <button
+                class="btn btn-primary"
+                (click)="updateCustomer()"
+              >
+                Update Customer
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
