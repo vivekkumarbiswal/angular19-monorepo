@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +22,7 @@ export interface ApiResponse<T> {
 
 @Component({
   selector: 'app-post-api',
-  imports: [NgFor, FormsModule],
+  imports: [NgFor, FormsModule, NgIf],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css',
 })
@@ -64,5 +64,44 @@ export class PostApiComponent {
           alert(res.message);
         }
       });
+  }
+
+  onEdit(data: any) {
+    this.carObj = data;
+  }
+
+  updateCar() {
+    this.http
+      .put<
+        ApiResponse<Car[]>
+      >('https://freeapi.miniprojectideas.com/api/CarRentalApp/UpdateCar', this.carObj)
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Car Updated Succesfully');
+          this.getAllCars();
+        } else {
+          alert(res.message);
+        }
+      });
+  }
+
+  onDelete(id: number) {
+    const isDelete = confirm('Are you sure you want to delete?');
+
+    if (isDelete === true) {
+      this.http
+        .delete(
+          'https://freeapi.miniprojectideas.com/api/CarRentalApp/DeleteCarbyCarId?carid=' +
+            id,
+        )
+        .subscribe((res: any) => {
+          if (res.result) {
+            alert('Car Deleted Succesfully');
+            this.getAllCars();
+          } else {
+            alert(res.message);
+          }
+        });
+    }
   }
 }
