@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  loginObj: any = {
-    email: '',
-    password: '',
-  };
+  // loginObj: any = {
+  //   email: '',
+  //   password: '',
+  // };
 
   apiLoginObj: any = {
     username: '',
@@ -37,8 +37,18 @@ export class LoginComponent {
       .post<any>('http://localhost:3000/login', this.apiLoginObj)
       .subscribe(
         (res) => {
-          localStorage.setItem('User', res.user.id);
-          this.router.navigate(['/cards']);
+          // localStorage.setItem('User', res.user.id);
+          // this.router.navigate(['/cards']);
+
+          // store full user object
+          localStorage.setItem('User', JSON.stringify(res.user));
+
+          //role-based redirect
+          if (res.user.rol === 'admin') {
+            this.router.navigate(['/cards']);
+          } else {
+            this.router.navigate(['/investment']);
+          }
         },
         (error) => {
           alert('Worng Credentials');
