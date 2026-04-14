@@ -1,0 +1,49 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Emp ID</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Contact</th>
+      <th>Attendance</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <!-- Loader -->
+    <ng-container *ngIf="isLoader">
+      <tr>
+        <td colspan="6" class="text-center">
+          <div class="spinner-border text-primary"></div>
+        </td>
+      </tr>
+    </ng-container>
+
+    <!-- Data -->
+    <ng-container *ngIf="!isLoader">
+      <tr *ngFor="let emp of employeeArray">
+        <td>{{ emp.empId }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.city }}</td>
+        <td>{{ emp.contactNo }}</td>
+        <td>{{ emp.attendance }}</td>
+
+        <!-- Status Column -->
+        <td>
+          <span
+            *ngIf="emp.isActive; else inactiveTemplate"
+            class="text-success"
+          >
+            Active
+          </span>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<!-- Reusable Template -->
+<ng-template #inactiveTemplate>
+  <span class="text-danger">Inactive</span>
+</ng-template>
