@@ -12,7 +12,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   user: any;
   storedToken: string | null = null;
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.storedToken = localStorage.getItem('token');
@@ -21,13 +21,13 @@ export class AppComponent {
   login() {
     this.auth.login().subscribe({
       next: (res) => {
-        console.log('✅ TOKEN RECEIVED:', res.accessToken);
+        console.log('TOKEN RECEIVED:', res.accessToken);
         localStorage.setItem('token', res.accessToken);
         this.storedToken = res.accessToken;
-        console.log('📦 LOGGED IN STORAGE:', localStorage.getItem('token'));
+        // console.log('LOGGED IN STORAGE:', localStorage.getItem('token'));
       },
       error: (err) => {
-        console.error('❌ LOGIN ERROR:', err);
+        console.error('LOGIN ERROR:', err);
       },
     });
   }
@@ -35,11 +35,11 @@ export class AppComponent {
   getProfile() {
     this.auth.getProfile().subscribe({
       next: (res) => {
-        console.log('✅ PROFILE:', res);
+        console.log('PROFILE:', res);
         this.user = res;
       },
       error: (err) => {
-        console.error('❌ PROFILE ERROR:', err);
+        console.error('PROFILE ERROR:', err);
       },
     });
   }

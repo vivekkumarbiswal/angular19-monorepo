@@ -4,11 +4,6 @@
 <button (click)="getProfile()">Get Profile</button>
 <button (click)="logout()">Logout</button>
 
-<div style="margin-top: 20px; padding: 10px; background: #eef; border: 1px dashed #333; word-break: break-all;">
-  <b>🔑 Current LocalStorage Token:</b><br />
-  <code>{{ storedToken || 'NOT FOUND' }}</code>
-</div>
-
 <hr />
 
 <div *ngIf="user">
